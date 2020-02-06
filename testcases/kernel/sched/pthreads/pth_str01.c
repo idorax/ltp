@@ -60,10 +60,13 @@ int TST_TOTAL = 1;
 
 void testexit(int value)
 {
+	/* XXX: hack to test TFAIL */
+	value += 1;
+
 	if (value == 0)
 		tst_resm(TPASS, "Test passed");
 	else
-		tst_resm(TFAIL, "Test failed");
+		tst_resm(TFAIL, "XXX: Test failed, idorax");
 
 	exit(value);
 }

@@ -135,6 +135,8 @@ int main(int ac, char *av[])
 
 	setup(ac, av);
 
+	tst_resm(TWARN, "XXX: just test TWARN...idorax");
+
 	for (i = num_writers; i > 0; --i) {
 
 		child = tst_fork();

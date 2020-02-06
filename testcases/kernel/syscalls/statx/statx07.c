@@ -142,6 +142,8 @@ static void setup(void)
 		tst_brk(TCONF | TST_ERR, "%s not found", cmd);
 	if (ret)
 		tst_brk(TBROK | TST_ERR, "failed to exportfs");
+	/* always go to TBROK for testing PR#458 */
+	tst_brk(TBROK | TST_ERR, "XXX: failed to exportfs, PR#458");
 
 	if (mount(server_path, CLI_PATH, "nfs", 0, "addr=127.0.0.1")) {
 		if (errno == EOPNOTSUPP || errno == ECONNREFUSED

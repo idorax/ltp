@@ -236,6 +236,9 @@ static int dotest(key_t key, int child_process)
 	int id, pid;
 	int i, count, status, exit_status;
 
+	printf("XXX: test PR#473, idorax, exit ...");
+	return FAIL;
+
 	sighold(SIGTERM);
 	if ((id = msgget(key, IPC_CREAT | S_IRUSR | S_IWUSR)) < 0) {
 		printf("msgget() error in child %d: %s\n",
